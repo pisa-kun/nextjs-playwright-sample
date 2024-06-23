@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# nextjs + playwrightのUIテスト
 
-## Getting Started
+## Install
 
-First, run the development server:
+### pnpmでnextjs.jsをインストール
+> pnpm dlx create-next-app@latest
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+projectを**nextjs-playwright-sample**にする
+
+> cd nextjs-playwright-sample
+
+### Installing Playwright
+> pnpm create playwright
+
+
+全部defaultにしておく
+
+### Running the Example Test(in UI Mode)
+> pnpm run dev
+localhostが起動した状態で
+
+> pnpm playwright test
+
+またはUIモード
+> pnpm playwright test --ui
+
+package.jsonにコマンドを追加しておく
+```json
+  "scripts": {
+    "ui-test": "pnpm playwright test",
+  },
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> pnpm run ui-test
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ref
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+[plyawright](https://playwright.dev/docs/intro)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[nextjs](https://nextjs.org/docs/pages/building-your-application/testing/playwright)
